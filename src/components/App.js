@@ -7,7 +7,13 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import type { Node } from 'react';
+// import { Node } from 'react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from '../reducers/PeopleReducer';
+import PeopleList from './PeopleList';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -26,7 +32,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({children, title}): Node => {
+const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -59,38 +67,59 @@ const App: () => Node = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  //   return (
+  //     <Provider store={store}>
+  //       <SafeAreaView style={backgroundStyle}>
+  //         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+  //         <ScrollView
+  //           contentInsetAdjustmentBehavior="automatic"
+  //           style={backgroundStyle}>
+  //           <Header />
+  //           <View
+  //             style={{
+  //               backgroundColor: isDarkMode ? Colors.black : Colors.white,
+  //             }}>
+  //             <Section title="Step One">
+  //               Edit <Text style={styles.highlight}>App.js</Text> to change this
+  //               screen and then come back to see your edits.
+  //               <Text style={styles.highlight}>
+  //                 Will it scroll?
+  //               </Text>
+  //             </Section>
+  //             <Section title="See Your Changes">
+  //               <ReloadInstructions />
+  //             </Section>
+  //             <Section title="Debug">
+  //               <DebugInstructions />
+  //             </Section>
+  //             <Section title="Learn More">
+  //               Read the docs to discover what to do next:
+  //             </Section>
+  //             <LearnMoreLinks />
+  //           </View>
+  //         </ScrollView>
+  //       </SafeAreaView>
+  //     </Provider>
+  //   );
+  // };
+
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    <Provider store={store}>
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-            <Text style={styles.highlight}> 
-              Will it scroll?
-            </Text>
+        {/* <Header /> */}
+        <View >
+          <Section>
+            <PeopleList />
+
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-            More info
-          </Section>
-          <LearnMoreLinks />
+          {/* <LearnMoreLinks /> */}
+
         </View>
       </ScrollView>
-    </SafeAreaView>
+
+    </Provider >
   );
 };
 
