@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, StyleSheet, FlatList } from 'react-native';
+import Icon from 'react-native-vector-icons/EvilIcons';
 import { connect } from 'react-redux';
 import PeopleItem from './PeopleItem';
 
@@ -16,6 +17,11 @@ const styles = StyleSheet.create({
 });
 
 class PeopleList extends Component {
+  static navigationOptions = {
+    tabBarIcon: ({tintColor}) => (
+      <Icon name={'user'} size={50} color={tintColor}/>
+    )
+  }
   render() {
     return (
       <View style={styles.container}>
