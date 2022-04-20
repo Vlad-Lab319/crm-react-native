@@ -24,10 +24,13 @@ import {
   Button,
 } from 'react-native';
 
-import { Ionicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
+import {Ionicons} from '@expo/vector-icons';
+import {AntDesign} from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/EvilIcons';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import {
   Colors,
@@ -53,14 +56,10 @@ function MyTabs() {
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === 'People') {
             return (
-              <AntDesign
-                name={
-                  focused
-                    ? 'contacts'
-                    : 'contacts'
-                }
+              <Icon
+                name={'user'}
                 size={32}
-                color={"black"}
+                color={'tomato'}
               />
             );
           } else if (route.name === 'Companies') {
@@ -71,10 +70,19 @@ function MyTabs() {
                 color="black"
               />
             );
+          } else if (route.name === 'Add contact') {
+            return (
+              <AntDesign 
+                name="pluscircle" 
+                size={24} 
+                color="black" 
+              />
+            );
           }
-        },
-        // tabBarInactiveTintColor: 'gray',
-        // tabBarActiveTintColor: 'tomato',
+        }, 
+        tabBarShowIcon: true,
+        tabBarInactiveTintColor: 'gray',
+        tabBarActiveTintColor: 'tomato',
       })}
     >
       <Tab.Screen name="People" component={PeopleList} />
@@ -83,6 +91,48 @@ function MyTabs() {
     </Tab.Navigator>
   );
 }
+
+// function MyTabs() {
+//   return (
+//     <Tab.Navigator
+//       initialRouteName="Feed"
+//       screenOptions={{
+//         tabBarActiveTintColor: '#e91e63',
+//       }}
+//     >
+//       <Tab.Screen
+//         name="Feed"
+//         component={PeopleList}
+//         options={{
+//           tabBarLabel: 'Home',
+//           tabBarIcon: ({ color, size }) => (
+//             <MaterialCommunityIcons name="home" color={color} size={size} />
+//           ),
+//         }}
+//       />
+//       <Tab.Screen
+//         name="Notifications"
+//         component={CompanyList}
+//         options={{
+//           tabBarLabel: 'Updates',
+//           tabBarIcon: ({ color, size }) => (
+//             <MaterialCommunityIcons name="bell" color={color} size={size} />
+//           ),
+//         }}
+//       />
+//       <Tab.Screen
+//         name="Profile"
+//         component={AddPerson}
+//         options={{
+//           tabBarLabel: 'Profile',
+//           tabBarIcon: ({ color, size }) => (
+//             <MaterialCommunityIcons name="account" color={color} size={size} />
+//           ),
+//         }}
+//       />
+//     </Tab.Navigator>
+//   );
+// }
 
 
 const App: () => Node = () => {

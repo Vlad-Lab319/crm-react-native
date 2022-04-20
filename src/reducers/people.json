@@ -5,7 +5,9 @@
     "lastName": "Brown",
     "email": "test@test.com",
     "phone": "437-999-99-99",
-    "company": "AAA"
+    "company": "AAA",
+    "project": "aaa",
+    "notes": "note_aaa"
   },
   {
     "id": 2,
@@ -13,7 +15,9 @@
     "lastName": "Green",
     "email": "test2@test.com",
     "phone": "437-999-99-98",
-    "company": "BBB"
+    "company": "BBB",
+    "project": "bbb",
+    "notes": "note_bbb"
   },
   {
     "id": 3,
@@ -21,6 +25,8 @@
     "lastName": "White",
     "email": "test3@test.com",
     "phone": "437-999-99-97",
-    "company": "CCC"
+    "company": "CCC",
+    "project": "ccc",
+    "notes": "note_ccc"
   }
 ]

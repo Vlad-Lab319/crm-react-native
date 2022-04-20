@@ -5,11 +5,11 @@ import Icon from 'react-native-vector-icons/EvilIcons';
 import * as actions from '../actions';
 
 class CompanyList extends Component {
-  static navigationOptions = {
-    tabBarIcon: ({tintColor}) => (
-      <Icon name={'aarchive'} size={50} color={tintColor}/>
-    )
-  }
+  // static navigationOptions = {
+  //   tabBarIcon: ({tintColor}) => (
+  //     <Icon name={'archive'} size={50} color={tintColor}/>
+  //   )
+  // }
   render() {
     return (
       <View>
