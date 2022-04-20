@@ -21,6 +21,10 @@ target 'crm' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-material-kit', :path => '../node_modules/react-native-material-kit'
+
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+
   target 'crmTests' do
     inherit! :complete
     # Pods for testing

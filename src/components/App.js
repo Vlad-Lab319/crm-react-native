@@ -9,6 +9,7 @@
 import React from 'react';
 import type { Node } from 'react';
 import { Provider } from 'react-redux';
+import { Provider as PaperProvider } from "react-native-paper";
 import { createStore } from 'redux';
 
 import reducers from '../reducers/PeopleReducer';
