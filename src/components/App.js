@@ -25,13 +25,13 @@ import {
   Button,
 } from 'react-native';
 
-import {Ionicons} from '@expo/vector-icons';
-import {AntDesign} from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/EvilIcons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import {
   Colors,
@@ -65,22 +65,22 @@ function MyTabs() {
             );
           } else if (route.name === 'Companies') {
             return (
-              <Ionicons
-                name="business"
-                size={24}
-                color="black"
+              <MaterialCommunityIcons 
+              name={'airballoon-outline'} 
+              size={32} 
+              color={'tomato'} 
               />
             );
           } else if (route.name === 'Add contact') {
             return (
-              <AntDesign 
-                name="pluscircle" 
-                size={24} 
-                color="black" 
+              <AntDesign
+                name={'pluscircleo'}
+                size={32}
+                color={'tomato'}
               />
             );
           }
-        }, 
+        },
         tabBarShowIcon: true,
         tabBarInactiveTintColor: 'gray',
         tabBarActiveTintColor: 'tomato',
@@ -158,9 +158,10 @@ const App: () => Node = () => {
       {/* <Navigation /> */}
 
       {/* </ScrollView> */}
-      <NavigationContainer>
-        <MyTabs />
-      </NavigationContainer>
+
+        <NavigationContainer>
+          <MyTabs />
+        </NavigationContainer>
 
     </Provider >
   );
