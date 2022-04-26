@@ -9,7 +9,7 @@
 import React from 'react';
 import type { Node } from 'react';
 import { Provider } from 'react-redux';
-import { Provider as PaperProvider } from "react-native-paper";
+// import { Provider as PaperProvider } from "react-native-paper";
 import { createStore } from 'redux';
 
 import reducers from '../reducers/PeopleReducer';
@@ -93,49 +93,6 @@ function MyTabs() {
   );
 }
 
-// function MyTabs() {
-//   return (
-//     <Tab.Navigator
-//       initialRouteName="Feed"
-//       screenOptions={{
-//         tabBarActiveTintColor: '#e91e63',
-//       }}
-//     >
-//       <Tab.Screen
-//         name="Feed"
-//         component={PeopleList}
-//         options={{
-//           tabBarLabel: 'Home',
-//           tabBarIcon: ({ color, size }) => (
-//             <MaterialCommunityIcons name="home" color={color} size={size} />
-//           ),
-//         }}
-//       />
-//       <Tab.Screen
-//         name="Notifications"
-//         component={CompanyList}
-//         options={{
-//           tabBarLabel: 'Updates',
-//           tabBarIcon: ({ color, size }) => (
-//             <MaterialCommunityIcons name="bell" color={color} size={size} />
-//           ),
-//         }}
-//       />
-//       <Tab.Screen
-//         name="Profile"
-//         component={AddPerson}
-//         options={{
-//           tabBarLabel: 'Profile',
-//           tabBarIcon: ({ color, size }) => (
-//             <MaterialCommunityIcons name="account" color={color} size={size} />
-//           ),
-//         }}
-//       />
-//     </Tab.Navigator>
-//   );
-// }
-
-
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -145,20 +102,7 @@ const App: () => Node = () => {
 
   return (
     <Provider store={store}>
-      {/* <ScrollView
-      // contentInsetAdjustmentBehavior="automatic"
-      // style={backgroundStyle}
-      > */}
-
-      {/* <Header /> */}
-      {/* <View >
-          <PeopleList />
-
-        </View> */}
-      {/* <Navigation /> */}
-
-      {/* </ScrollView> */}
-
+    
         <NavigationContainer>
           <MyTabs />
         </NavigationContainer>
